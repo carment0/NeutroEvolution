@@ -8,6 +8,8 @@ import Tabs, { Tab } from 'material-ui/Tabs';
 import AISimulator from './components/ai_simulator';
 import About from './components/about';
 
+import './scss/application.scss';
+
 class Application extends React.Component {
   state = {
     tabValue: 0,
@@ -21,6 +23,7 @@ class Application extends React.Component {
     if (this.state.tabValue === 1) {
       return <About />;
     }
+
     return (
       <AISimulator />
     );
