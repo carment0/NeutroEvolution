@@ -1,6 +1,6 @@
 -- How to use postgres sql without rails
-DROP DATABASE IF EXISTS micro_evo;
-CREATE DATABASE micro_evo WITH OWNER "cto";
+DROP DATABASE IF EXISTS neutro_evo;
+CREATE DATABASE neutro_evo WITH OWNER "cto";
 
 \c micro_evo cto;
 
