@@ -16,3 +16,10 @@ export const randMovement = () => {
   }
   return n;
 };
+
+export const determineObjType = (obj) => {
+  if (obj.constructor.name === 'Bacteria') {
+    return 1;
+  }
+  return 0;
+};
