@@ -1,4 +1,3 @@
-// External libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Paper from 'material-ui/Paper';
@@ -8,7 +7,9 @@ import Tabs, { Tab } from 'material-ui/Tabs';
 import AISimulator from './components/ai_simulator';
 import About from './components/about';
 
-import './scss/application.scss';
+// SCSS
+import './styles/application.scss';
+
 
 class Application extends React.Component {
   state = {
@@ -31,7 +32,7 @@ class Application extends React.Component {
 
   render() {
     return (
-      <div id="application">
+      <div id="react-application">
         <Paper className="navigation">
           <Tabs
             value={this.state.tabValue}
@@ -50,5 +51,5 @@ class Application extends React.Component {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(<Application />, document.getElementById('react-application'));
+  ReactDOM.render(<Application />, document.getElementById('root'));
 });

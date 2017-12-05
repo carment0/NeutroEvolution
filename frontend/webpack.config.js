@@ -6,7 +6,7 @@ const extractSCSS = new ExtractTextPlugin({ filename: 'bundle.css' });
 module.exports = {
   entry: path.join(__dirname, 'entry.jsx'),
   output: {
-    path: path.join(__dirname, '..', 'public', 'js'),
+    path: path.join(__dirname, '..', 'public'),
     filename: 'bundle.js'
   },
   resolve: {

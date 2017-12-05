@@ -108,8 +108,6 @@ class AISimulator extends React.Component {
       this.canvas = canvas;
       this.canvas.height = document.getElementById('left-panel').offsetHeight * 0.95;
       this.canvas.style.background = '#ffe6f2';
-      console.log(this.canvas.width);
-      console.log(this.canvas.height);
     }
   }
 
