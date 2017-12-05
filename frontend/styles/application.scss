@@ -6,21 +6,75 @@
 
 body {
   margin: 0;
-  height: 100vh;
+  height: 99vh;
   width: 100vw;
 }
 
 #root {
   height: 100%;
   width: 100%;
+  padding: 0px;
 
   #react-application {
     height: inherit;
     width: inherit;
+    padding: 0px;
 
     .ai-simulator {
       height: calc(100% - 48px);
-      width: 100%;
+      width: inherit;
+
+      .content {
+        height: 100%;
+        width: inherit;
+        display: flex;
+        flex-direction: row;
+
+        .left-panel {
+          height: inherit;
+          width: 80%;
+          max-width: calc(100% - 425px);
+          display: inherit;
+          flex-direction: column;
+          justify-content: center;
+          align-content: center;
+
+          canvas {
+            margin-top: 0.25rem;
+            margin-bottom: 0.25rem;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+          }
+        }
+
+        .right-panel {
+          height: inherit;
+          width: 20%;
+          min-width: 425px;
+          display: inherit;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-content: center;
+          padding-bottom: 0.1rem;
+
+          .data-table {
+            height: inherit;
+            width: 97%;
+            margin-top: 0.5rem;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+            overflow: scroll;
+          }
+        }
+      }
+    }
+
+    .about {
+      .title {
+        text-align: center;
+        text-transform: uppercase;
+        padding-top: 20px;
+      }
     }
   }
 }

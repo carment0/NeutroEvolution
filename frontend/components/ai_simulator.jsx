@@ -4,7 +4,7 @@ import axios from 'axios';
 import Snackbar from 'material-ui/Snackbar';
 
 // Components
-// import DataTable from './data_table';
+import DataTable from './data_table';
 
 // Paper.js
 // import Simulator from '../paper/simulator';
@@ -25,7 +25,7 @@ class AISimulator extends React.Component {
   }
 
   componentDidMount() {
-    this.updateState = setInterval(this.handleState, 2000);
+    // this.updateState = setInterval(this.handleState, 2000);
     this.saveWeightsInterval = setInterval(this.handleWeightsCreate, 20000);
   }
 
@@ -67,31 +67,29 @@ class AISimulator extends React.Component {
     }
   };
 
+  triggerSnack = (message) => {
+    this.setState({
+      openSnack: true,
+      reportMessage: message
+    });
+
+    setTimeout(() => this.setState({ openSnack: false, reportMessage: '' }), 3000);
+  }
+
   handleWeightsCreateFail = () => {
-    this.setState({ openSnack: true, reportMessage: 'Unexpected error occurred; failed to save weights to server.' });
-    setTimeout(() => { this.setState({ openSnack: false }); }, 3000);
+    this.triggerSnack('Unexpected error occurred; failed to save weights to server.');
   }
 
   handleWeightsCreateSuccess = () => {
-    this.setState({ openSnack: true, reportMessage: 'Your recent neurons having been saved to the server!' });
-    setTimeout(() => { this.setState({ openSnack: false }); }, 3000);
+    this.triggerSnack('Your recent neurons having been saved to the server!');
   }
 
   handleWeightsGetFail = () => {
-    this.setState({ openSnack: true, reportMessage: 'Failed to retrieve weights from server.' });
-    setTimeout(() => { this.setState({ openSnack: false }); }, 3000);
+    this.triggerSnack('Failed to retrieve weights from server.');
   }
 
   handleWeightsGetSuccess = (res) => {
-    this.setState({
-      openSnack: true,
-      reportMessage: 'Weights have been retrieved from server'
-    });
-
-    setTimeout(() => {
-      this.setState({ openSnack: false, reportMessage: '' });
-    }, 3000);
-
+    this.triggerSnack('Weights have been retrieved from server.');
     this.weight1 = res.data.weight1;
     this.weight2 = res.data.weight2;
     // this.simulation = new Simulator(this.canvas, [this.weight1, this.weight2]);
@@ -106,7 +104,7 @@ class AISimulator extends React.Component {
   configureCanvas = (canvas) => {
     if (canvas) {
       this.canvas = canvas;
-      this.canvas.height = document.getElementById('left-panel').offsetHeight * 0.95;
+      this.canvas.height = document.getElementById('left-panel').offsetHeight * 0.97;
       this.canvas.style.background = '#ffe6f2';
     }
   }
@@ -118,7 +116,12 @@ class AISimulator extends React.Component {
           <div className="left-panel" id="left-panel">
             <canvas ref={this.configureCanvas} />
           </div>
-          <div className="right-panel" />
+          <div className="right-panel">
+            <DataTable
+              population={this.state.population}
+              fittestWhiteBloodCell={this.state.fittestWhiteBloodCell}
+              avgStats={this.state.avgStats} />
+          </div>
         </div>
         <Snackbar
           anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
