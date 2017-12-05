@@ -5,9 +5,8 @@ import Snackbar from 'material-ui/Snackbar';
 
 // Components
 import DataTable from './data_table';
+import Simulator from '../paperjs/simulator';
 
-// Paper.js
-// import Simulator from '../paper/simulator';
 
 class AISimulator extends React.Component {
   state = {
@@ -25,7 +24,7 @@ class AISimulator extends React.Component {
   }
 
   componentDidMount() {
-    // this.updateState = setInterval(this.handleState, 2000);
+    this.updateState = setInterval(this.handleState, 2000);
     this.saveWeightsInterval = setInterval(this.handleWeightsCreate, 20000);
   }
 
@@ -73,7 +72,7 @@ class AISimulator extends React.Component {
       reportMessage: message
     });
 
-    setTimeout(() => this.setState({ openSnack: false, reportMessage: '' }), 3000);
+    setTimeout(() => this.setState({ openSnack: false }), 3000);
   }
 
   handleWeightsCreateFail = () => {
@@ -92,8 +91,8 @@ class AISimulator extends React.Component {
     this.triggerSnack('Weights have been retrieved from server.');
     this.weight1 = res.data.weight1;
     this.weight2 = res.data.weight2;
-    // this.simulation = new Simulator(this.canvas, [this.weight1, this.weight2]);
-    // this.simulation.run();
+    this.simulation = new Simulator(this.canvas, [this.weight1, this.weight2]);
+    this.simulation.run();
   }
 
   /**
