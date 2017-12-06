@@ -82,6 +82,8 @@ app.get('/api/weights/latest', (req, response) => {
   }
 });
 
+const port = process.env.PORT || 8000;
+
 // Start the server
 const httpServer = Http.createServer(app);
 httpServer.listen(8000, () => {
