@@ -1,2 +1,64 @@
 # NeutroEvo
 Simulate evolution of neutrophil using feedforward neural network and genetic algorithms
+
+## Genetic Algorithms
+Writing in progress...
+
+## Deployment
+### Create the app
+Using Heroku CLI tool, create an app
+```
+heroku create neutro-evo
+```
+
+Check if the app has been created
+```
+heroku apps --all
+```
+
+### Connect to Database
+Go to Heroku.com and add Heroku:Postgres as an addon for free and then access database credentials through
+```
+heroku pg:credentials:url
+```
+
+I should be able to see the database name, host, user, password and port number.
+
+In order to access the content of Postgres database, use `psql`
+```
+heroku pg:psql --app neutro-evo
+```
+
+Inside the `server.js` file, heroku injects an environment variable called `DATABASE_URL` and I am going to use that to
+connect to PG when my program is deployed to Heroku.
+```javascript
+if (process.env.DATABASE_URL) {
+  dbOptions = {
+    connectionString: process.env.DATABASE_URL,
+    ssl: true
+  };
+}
+
+const client = new Postgres.Client(dbOptions);
+```
+
+### Seeds
+Seed the databse with `seeds.sql`, do the following:
+```
+heroku pg:psql --app neutro-evo < seeds.sql
+```
+
+### Push it
+```
+git push heroku master
+```
+
+When the code is pushed, Heroku will run two commands for me. First it does `npm install` and installs all project dependencies
+as node modules. In my `package.json`, I put in a `postinstall` option which allows webpack to run immediately after node
+modules are installed. And then Heroku will run `npm start` and launch my server.
+
+```
+"start": "node server.js",
+"postinstall": "npm run build",
+"build": "webpack --config webpack.config.js",
+```
