@@ -9,11 +9,25 @@ const BodyParser = require('body-parser');
 // Internal libraries
 const Logger = require('./logger.js');
 
-// Allows access to Postgres sql
+// Allows access to Postgres sql. If environmental variable DATABASE_URL exists, that means we are in production.
+let dbOptions;
+if (process.env.DATABASE_URL) {
+  dbOptions = {
+    user: 'vrwsihvfnuzshj',
+    password: '029ae6a827b99a763cfca46071109fe35ed1d1c211da52f03977efb8cb9cbe30',
+    database: 'dfsilcnlk5hlg8',
+    connectionString: 'process.env.DATABASE_URL',
+    ssl: true
+  };
+} else {
+  dbOptions = {
+    user: 'cto',
+    password: 'cto',
+    database: 'micro_evo'
+  };
+}
 const client = new Postgres.Client({
-  user: 'cto',
-  password: 'cto',
-  database: 'micro_evo'
+
 });
 
 // Connect client to postgres. This returns a promise.
