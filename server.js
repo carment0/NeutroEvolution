@@ -9,21 +9,24 @@ const BodyParser = require('body-parser');
 // Internal libraries
 const Logger = require('./logger.js');
 
+// If connection string does not work, use the following options
+// user: 'vrwsihvfnuzshj',
+// host: 'ec2-54-235-76-111.compute-1.amazonaws.com',
+// password: '029ae6a827b99a763cfca46071109fe35ed1d1c211da52f03977efb8cb9cbe30',
+// database: 'dfsilcnlk5hlg8',
+// port: 5432,
+
 // Allows access to Postgres sql. If environmental variable DATABASE_URL exists, that means we are in production.
-let dbOptions;
+let dbOptions = {
+  user: 'cto',
+  password: 'cto',
+  database: 'micro_evo'
+};
+
 if (process.env.DATABASE_URL) {
   dbOptions = {
-    user: 'vrwsihvfnuzshj',
-    password: '029ae6a827b99a763cfca46071109fe35ed1d1c211da52f03977efb8cb9cbe30',
-    database: 'dfsilcnlk5hlg8',
-    connectionString: 'process.env.DATABASE_URL',
+    connectionString: process.env.DATABASE_URL,
     ssl: true
-  };
-} else {
-  dbOptions = {
-    user: 'cto',
-    password: 'cto',
-    database: 'micro_evo'
   };
 }
 
