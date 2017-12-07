@@ -26,9 +26,8 @@ if (process.env.DATABASE_URL) {
     database: 'micro_evo'
   };
 }
-const client = new Postgres.Client({
 
-});
+const client = new Postgres.Client(dbOptions);
 
 // Connect client to postgres. This returns a promise.
 let isDatabaseConnected = false;
