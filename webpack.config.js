@@ -4,9 +4,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractSCSS = new ExtractTextPlugin({ filename: 'bundle.css' });
 
 module.exports = {
-  entry: path.join(__dirname, 'entry.jsx'),
+  entry: path.join(__dirname, 'frontend', 'index.jsx'),
   output: {
-    path: path.join(__dirname, '..', 'public'),
+    path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
   },
   resolve: {

@@ -24,8 +24,6 @@ class AISimulator extends React.Component {
   }
 
   componentDidMount() {
-    this.updateState = setInterval(this.handleState, 2000);
-    this.saveWeightsInterval = setInterval(this.handleWeightsCreate, 20000);
   }
 
   componentWillUnmount() {
@@ -66,6 +64,15 @@ class AISimulator extends React.Component {
     }
   };
 
+  handleWeightsCreateFail = () => {
+    this.triggerSnack('Unexpected error occurred; failed to save weights to server.');
+  };
+
+  handleWeightsCreateSuccess = () => {
+    this.triggerSnack('Your recent neurons having been saved to the server!');
+  };
+
+
   triggerSnack = (message) => {
     this.setState({
       openSnack: true,
@@ -75,17 +82,9 @@ class AISimulator extends React.Component {
     setTimeout(() => this.setState({ openSnack: false }), 3000);
   }
 
-  handleWeightsCreateFail = () => {
-    this.triggerSnack('Unexpected error occurred; failed to save weights to server.');
-  }
-
-  handleWeightsCreateSuccess = () => {
-    this.triggerSnack('Your recent neurons having been saved to the server!');
-  }
-
   handleWeightsGetFail = () => {
-    this.triggerSnack('Failed to retrieve weights from server.');
-  }
+    this.triggerSnack('Failed to retrieve weights from server. Refresh to try again.');
+  };
 
   handleWeightsGetSuccess = (res) => {
     this.triggerSnack('Weights have been retrieved from server.');
@@ -93,7 +92,9 @@ class AISimulator extends React.Component {
     this.weight2 = res.data.weight2;
     this.simulation = new Simulator(this.canvas, [this.weight1, this.weight2]);
     this.simulation.run();
-  }
+    this.saveWeightsInterval = setInterval(this.handleWeightsCreate, 20000);
+    this.updateState = setInterval(this.handleState, 2000);
+  };
 
   /**
   * Callback to update the canvas size and store it as an instance variable to this component because Paper.js will need
