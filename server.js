@@ -10,10 +10,10 @@ const BodyParser = require('body-parser');
 const Logger = require('./logger.js');
 
 // If connection string does not work, use the following options
-// user: 'vrwsihvfnuzshj',
-// host: 'ec2-54-235-76-111.compute-1.amazonaws.com',
-// password: '029ae6a827b99a763cfca46071109fe35ed1d1c211da52f03977efb8cb9cbe30',
-// database: 'dfsilcnlk5hlg8',
+// user: 'tbzfogmmoilpca',
+// host: 'ec2-54-235-123-153.compute-1.amazonaws.com',
+// password: 'd7f90b25e6872a50fe1a50658b7e394effb98a94ad9e23019f1513d8a0a56c2e',
+// database: 'd2suvm3bciuag4',
 // port: 5432,
 
 // Allows access to Postgres sql. If environmental variable DATABASE_URL exists, that means we are in production.
