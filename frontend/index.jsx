@@ -45,6 +45,14 @@ class Application extends React.Component {
           </Tabs>
         </Paper>
         {this.content}
+        <footer>
+          <a className="logo" href="https://www.github.com/carment0/NeutroEvolution">
+            <img className="logo" src="/images/github.png"/>
+          </a>
+          <a className="logo" href="https://www.linkedin.com/in/carmen-to-2480161a/">
+            <img className="logo" src="/images/linkedin.png"/>
+          </a>
+        </footer>
       </div>
     );
   }

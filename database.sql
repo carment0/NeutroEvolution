@@ -2,7 +2,7 @@
 DROP DATABASE IF EXISTS neutro_evo;
 CREATE DATABASE neutro_evo WITH OWNER "cto";
 
-\c micro_evo cto;
+\c neutro_evo cto;
 
 CREATE TABLE weight_matrices(
   id SERIAL PRIMARY KEY,

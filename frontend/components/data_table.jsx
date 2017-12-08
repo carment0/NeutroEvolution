@@ -28,7 +28,10 @@ class DataTable extends React.Component {
   render() {
     return (
       <Paper className="data-table">
-        <Typography className="title" color="primary">Current Fittest WBC</Typography>
+        <img src="/images/cartoon_background.jpg"/>
+        
+        <Typography className="title" color="primary" align="center">CURRENT FITTEST WBC</Typography>
+
         <Table>
           <TableHead>
             <TableRow>
@@ -45,7 +48,7 @@ class DataTable extends React.Component {
             </TableRow>
           </TableBody>
         </Table>
-        <Typography className="title" color="primary">Average WBC Stats</Typography>
+        <Typography className="title" color="primary" align="center">AVERAGE WBC STATS</Typography>
         <Table>
           <TableHead>
             <TableRow>

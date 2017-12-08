@@ -20,7 +20,7 @@ const Logger = require('./logger.js');
 let dbOptions = {
   user: 'cto',
   password: 'cto',
-  database: 'micro_evo'
+  database: 'neutro_evo'
 };
 
 if (process.env.DATABASE_URL) {

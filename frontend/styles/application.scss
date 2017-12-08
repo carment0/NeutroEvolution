@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,800');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 * {
   font-family: 'Raleway', sans-serif;
@@ -64,6 +65,7 @@ body {
             margin-left: 0.5rem;
             margin-right: 0.5rem;
             overflow: scroll;
+
           }
         }
       }
@@ -77,4 +79,78 @@ body {
       }
     }
   }
+  footer {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    
+    .logo {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.about {
+  padding-bottom: 5rem;
+
+  .intro {
+    height: 20rem;
+    background-image: url("/images/background_vein.jpg");
+    background-position:  center center;
+  	background-size: cover;
+
+    p {
+      padding: 8rem;
+      text-align: center;
+      color: white;
+      font-size: 150%;
+      text-shadow: 2px 2px black;
+    }
+
+  }
+
+  .header {
+    padding-top: 50px;
+    text-align: center;
+    color: #24478f;
+    font-weight: bold;
+    font-size: 200%;
+  }
+
+  .video {
+    text-align: center;
+  }
+
+  .container {
+    display: block;
+    margin-bottom: 3rem;
+    min-width: 50em; /* Overrides max-width */
+    width: 100%;
+    max-width: 20em; /* Will be AT MOST 20em wide */
+
+    .subheader {
+      font-size: 120%;
+    }
+
+    .topics {
+      text-decoration: underline;
+      font-style: italic;
+    }
+
+    p {
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .credits {
+      text-align: center;
+    }
+
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto
+    }
+  }
+
 }
