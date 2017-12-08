@@ -83,7 +83,7 @@ body {
     padding: 10px;
     display: flex;
     flex-direction: row;
-    
+
     .logo {
       margin-left: 10px;
       margin-right: 10px;
@@ -93,15 +93,25 @@ body {
 
 .about {
   padding-bottom: 5rem;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
   .intro {
-    height: 20rem;
+    height: 25rem;
     background-image: url("/images/background_vein.jpg");
     background-position:  center center;
   	background-size: cover;
+    margin-bottom: 3rem;
 
     p {
-      padding: 8rem;
+      position: relative;
+      float: left;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding-left: 13%;
+      padding-right: 13%;
       text-align: center;
       color: white;
       font-size: 150%;
@@ -125,9 +135,8 @@ body {
   .container {
     display: block;
     margin-bottom: 3rem;
-    min-width: 50em; /* Overrides max-width */
     width: 100%;
-    max-width: 20em; /* Will be AT MOST 20em wide */
+    max-width: 1024px; /* Will be AT MOST 20em wide */
 
     .subheader {
       font-size: 120%;
