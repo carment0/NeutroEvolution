@@ -26,8 +26,7 @@ const About = () => (
           src="https://www.youtube.com/embed/zQGOcOUBi6s"
           frameBorder="0"
           gesture="media"
-          allow="encrypted-media"
-          allowFullscreen />
+          allowFullScreen />
         <br />
         <br />
         <iframe
@@ -37,8 +36,7 @@ const About = () => (
           src="https://www.youtube.com/embed/0TvTyj5FAaQ"
           frameBorder="0"
           gesture="media"
-          allow="encrypted-media"
-          allowFullscreen />
+          allowFullScreen />
       </div>
     </section>
     <section className="main-content">
