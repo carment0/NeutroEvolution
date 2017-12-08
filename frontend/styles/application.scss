@@ -65,81 +65,83 @@ body {
             margin-left: 0.5rem;
             margin-right: 0.5rem;
             overflow: scroll;
-
           }
         }
       }
     }
-
-    .about {
-      .title {
-        text-align: center;
-        text-transform: uppercase;
-        padding-top: 20px;
-      }
-    }
   }
+
   footer {
     padding: 10px;
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
 
     .logo {
-      margin-left: 10px;
-      margin-right: 10px;
+      margin-top: 0.2rem;
+      margin-left: 0.3rem;
+      margin-right: 0.3rem;
     }
   }
 }
 
 .about {
-  padding-bottom: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  .intro {
+  justify-content: center;
+
+  .banner {
     height: 25rem;
     background-image: url("/images/background_vein.jpg");
     background-position:  center center;
   	background-size: cover;
-    margin-bottom: 3rem;
 
     p {
+      margin: 0px;
+      max-height: 23rem;
+      width: 50%;
       position: relative;
       float: left;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      padding-left: 13%;
-      padding-right: 13%;
       text-align: center;
       color: white;
-      font-size: 150%;
+      font-size: 1.5rem;
       text-shadow: 2px 2px black;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  .intro {
+    .title {
+      text-align: center;
+      color: #24478f;
+      font-weight: bold;
+      font-size: 200%;
     }
 
+    .videos {
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
   }
 
-  .header {
-    padding-top: 50px;
-    text-align: center;
-    color: #24478f;
-    font-weight: bold;
-    font-size: 200%;
-  }
-
-  .video {
-    text-align: center;
-  }
-
-  .container {
-    display: block;
-    margin-bottom: 3rem;
+  .main-content {
+    display: flex;
     width: 100%;
     max-width: 1024px; /* Will be AT MOST 20em wide */
+    justify-content: center;
+    flex-direction: column;
 
-    .subheader {
-      font-size: 120%;
+    .title {
+      text-align: center;
+      color: #24478f;
+      font-weight: bold;
+      font-size: 200%;
     }
 
     .topics {
@@ -147,12 +149,16 @@ body {
       font-style: italic;
     }
 
-    p {
-      font-family: 'Open Sans', sans-serif;
-    }
-
     .credits {
       text-align: center;
+    }
+
+    strong {
+      font-size: 1.2rem;
+    }
+
+    p {
+      font-family: 'Open Sans', sans-serif;
     }
 
     img {
@@ -161,5 +167,4 @@ body {
       margin-right: auto
     }
   }
-
 }
