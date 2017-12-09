@@ -1,8 +1,20 @@
 # NeutroEvo
 Simulate evolution of neutrophil using feedforward neural network and genetic algorithms
 
-## Genetic Algorithms
-Writing in progress...
+## Installing
+Clone this project into your local computer:
+
+`git clone https://github.com/carment0/NeutroEvolution.git`
+
+In the project directory run the following command to install all dependencies:
+
+`npm install`
+
+Next run the server:
+
+`npm start server`
+
+Open http://localhost:8000 to view the project in the browser
 
 ## Deployment
 ### Create the app
