@@ -12,8 +12,15 @@ function mutation(weights) {
   const updatedWeights = [];
   weights.forEach((weight) => {
     if (Math.random() < WBC.mutateRate / 100) {
-      const randomWeight = (Math.random() - Math.random()) * 10;
-      updatedWeights.push(randomWeight);
+      const determinePercentChange = (Math.random() - Math.random());
+      const number = weight * 0.05;
+      if (determinePercentChange < 0) {
+        const randomWeight = weight - number;
+        updatedWeights.push(randomWeight);
+      } else {
+        const randomWeight = weight + number;
+        updatedWeights.push(randomWeight);
+      }
     } else {
       updatedWeights.push(weight);
     }

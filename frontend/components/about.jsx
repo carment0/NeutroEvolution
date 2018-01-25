@@ -6,17 +6,13 @@ const About = () => (
   <Paper className="about">
     <section className="banner">
       <p>
-        This project implement two bio-inspired computing methods to create a white blood cell (WBC) artificial
-        intelligence. Each generation of WBC evolve to optimize their ability to track and engulf bacteria within a red
-        blood cell colonized environment. Here, we will discuss how genetic algorithm is used to evolve and optimize a
-        feedforward neural network.
+        This project implements two bio-inspired computing methods to create a white blood cell (WBC) artificial intelligence. Each generation of WBC evolves to optimize their ability to track and engulf bacteria within a red blood cell colonized environment. Here, we will discuss how genetic algorithm is used to evolve and optimize a feedforward neural network.
       </p>
     </section>
     <section className="intro">
       <h1 className="title">The White Knights</h1>
       <p>
-        Before we get into the nitty-gritty details of how this project was implemented, lets learn about our immune
-        system and the importance of white blood cells!
+        {"Before we get into the nitty-gritty details of how this project was implemented, let's learn about our immune system and the importance of white blood cells!"}
       </p>
       <div className="videos">
         <iframe
@@ -48,9 +44,9 @@ const About = () => (
         used to find optimal or near-optimal solutions to highly nonlinear problems in a short amount of time.
       </p>
       <p>
-        The genetic algorithm can be applied in different way depending on the operators used implement
-        <a href="https://www.tutorialspoint.com/genetic_algorithms/genetic_algorithms_crossover.htm">crossover</a> or
-        <a href="https://www.tutorialspoint.com/genetic_algorithms/genetic_algorithms_mutation.htm">mutations</a>.
+        The genetic algorithm can be applied in different ways depending on the operators used implement
+        <a href="https://www.tutorialspoint.com/genetic_algorithms/genetic_algorithms_crossover.htm"> crossover </a> or
+        <a href="https://www.tutorialspoint.com/genetic_algorithms/genetic_algorithms_mutation.htm"> mutations </a>.
         However, all genetic algorithm follow the same convention:
       </p>
       <img src="/images/ga_flowchart.jpg" alt="float chart" />
@@ -65,7 +61,7 @@ const About = () => (
       <p className="topics">What is Natural Selection?</p>
       <p>
         A process of adaptation of an organism to their environment. Organisms that are best suited to the environment
-        will survive and a reproduce successfully, producing well adapted descendants.
+        will survive and a reproduce successfully, producing well-adapted descendants.
       </p>
       <br />
 
@@ -117,12 +113,12 @@ const About = () => (
       <ul>
         <li>Neuroplasticity</li>
         <li>Acquire knowledge through learning</li>
-        <li>Changes within inter-neuron connection strengths</li>
+        <li>Changes in inter-neuron connection strengths</li>
       </ul>
       <br />
       <strong className="subheader">The Anatomy</strong>
       <p className="topics">
-        How does the neural networks work in this project?
+        How do the neural networks work in this project?
       </p>
       <p>I created a deep feedforward neural networks by using a multilayer perceptron neural network architecture.</p>
       <img src="/images/ann_structure.jpg" alt="structure" />
@@ -134,7 +130,7 @@ const About = () => (
       </p>
       <p>Input layer</p>
       <ul>
-        <li>Contains neurons that receives normalized inputs of the WBC from the external world
+        <li>Contains neurons that receive normalized inputs of the WBC from the external world
           <ul>
             <li>Inputs include: x and y vector, x and y velocity and closest object type (0 or 1)</li>
           </ul>
@@ -155,7 +151,7 @@ const About = () => (
         <li>
           Each weighted sum is pass to a sigmoidal function to calculate the activation
           <ul>
-            <li>The sigmoidal function limits the summed value from 0 to 1 to get a desired result</li>
+            <li>The sigmoidal function limits the summed value from 0 to 1 to get the desired result</li>
           </ul>
         </li>
       </ul>
@@ -181,7 +177,7 @@ const About = () => (
       <br />
 
       <p className="topics">How is genetic algorithm applied to neural networks in this project?</p>
-      <p>A random population of WBC are created.</p>
+      <p>A random population of WBC is created.</p>
       <p>Each WBC updated their fitness at each frame.</p>
       <p>Selection</p>
       <ul>
@@ -194,7 +190,7 @@ const About = () => (
         </li>
         <li>Their leverage is due to fitness proportionate selection</li>
         <li>
-          Since the WBC lifespan is depend on the fitness, individuals with a higher fitness has a greater opportunity
+          Since the WBC lifespan depends on the fitness, individuals with a higher fitness have a greater opportunity
           to reproduce
         </li>
       </ul>
@@ -213,8 +209,8 @@ const About = () => (
             <li>A weighted matrix is a multidimensional array</li>
           </ul>
         </li>
-        <li>Since a WBC has two weighted matrix, crossover occurs twice </li>
-        <li>The crossover location is determined by a random index location at the first level array
+        <li>Since a WBC has two weighted matrices, crossover occurs twice </li>
+        <li>The crossover location is determined by a random index located at the first level array
           <ul>
             <li>The nested arrays are then exchanged at the chosen location to form new matrices for the offspring</li>
           </ul></li>
@@ -229,11 +225,11 @@ const About = () => (
       <p>Mutation</p>
       <ul>
         <li>
-          Before completing each crossover, individual values from the nest array have a 1% probability of genetic
+          Before completing each crossover, individual values from the nested array have a 1% probability of genetic
           change
           <ul>
             <li>Induces randomness within a population</li>
-            <li>If mutation occurs, the value in question will randomly change its a value from -10 to 10</li>
+            <li>If mutation occurs, the value will randomly change its a value +/- 5%</li>
           </ul>
         </li>
       </ul>
@@ -243,6 +239,10 @@ const About = () => (
           tutorialspoint
         </a>
       </p>
+
+      <img src="/images/next.jpeg" alt="next" />
+      <h1 className="title">Continue broadening my knowledge in deep learning by implementing a backpropagation algorithm!</h1>
+      <br />
     </section>
   </Paper>
 );
