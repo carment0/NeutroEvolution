@@ -1,5 +1,16 @@
 # NeutroEvo
-Simulate evolution of neutrophil using feedforward neural network and genetic algorithms
+https://neutro-evo.herokuapp.com
+
+This project implements two bio-inspired computing methods to create a white blood cell (WBC) artificial intelligence. Each generation of WBC evolves to optimize their ability to track and engulf bacteria within a red blood cell colonized environment.
+
+### Screenshots
+##### AI Simulation
+![simulation]
+##### About Page
+![about]
+
+[simulation]: ./images/1.png
+[about]: ./images/0.png
 
 ## Installing
 Clone this project into your local computer:
